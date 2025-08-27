@@ -36,13 +36,3 @@ export default function Header() {
     </header>
   )
 }
-
-
-{/*<Input*/}
-{/*  name='input-task'*/}
-{/*  id='input-task'*/}
-{/*  type='text'*/}
-{/*  label="Input your note..."*/}
-{/*  value={searchTerm}*/}
-{/*  onChange={setSearchTerm}*/}
-{/*/>*/}

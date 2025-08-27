@@ -5,6 +5,7 @@
   grid-template-areas:
     'title title'
     'searchBar toolBar';
+  margin-bottom: 30px;
 }
 
 .header__title {

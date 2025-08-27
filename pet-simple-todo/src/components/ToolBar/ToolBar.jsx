@@ -1,9 +1,10 @@
 import React from 'react';
+import {memo} from "react";
 import './ToolBar.css'
 import Button from "../Button/Button.jsx";
 import Select from "../Select/Select.jsx";
 
-const ToolBar = () => {
+const ToolBar = memo(() => {
   const themeIcon = <svg
     width={22}
     height={22}
@@ -25,6 +26,6 @@ const ToolBar = () => {
       <Button module='icon' icon={themeIcon}/>
     </div>
   );
-};
+});
 
 export default ToolBar;

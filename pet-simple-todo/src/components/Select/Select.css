@@ -2,6 +2,7 @@
   position: relative;
   min-width: 95px;
   background-color: var(--color-white);
+  z-index: 1;
 }
 
 .select-trigger {
@@ -22,15 +23,22 @@
 
 .options {
   position: absolute;
+  display: grid;
+  visibility: hidden;
   max-height: 200px;
   width: 100%;
   opacity: 0;
   background: inherit;
   border: var(--border);
   border-radius: 10px;
+  translate: 0 -100%;
+  transition-duration: var(--transition-duration);
+  z-index: -1;
 
   &.open {
+    visibility: visible;
     opacity: 1;
+    translate: 0 0%;
   }
 }
 

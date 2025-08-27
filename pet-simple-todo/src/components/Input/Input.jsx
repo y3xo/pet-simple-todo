@@ -1,3 +1,4 @@
+import {memo} from "react";
 import './Input.css'
 import {useState} from "react";
 

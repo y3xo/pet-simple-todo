@@ -6,7 +6,7 @@ const Select = () => {
   const [selectedOption, setSelectedOption] = useState('ALL')
 
   function onOptionClick(option) {
-    setSelectedOption(option.toUpperCase())
+    setSelectedOption(option)
     setOpen(false)
   }
   return (
