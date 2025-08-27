@@ -1,0 +1,26 @@
+.button {
+  color: var(--color-white);
+  background-color: var(--color-purple-d);
+  transition-duration: var(--transition-duration);
+
+  &:hover {
+    background-color: var(--color-purple);
+  }
+}
+
+.button--icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+}
+
+.button--secondary {
+  background-color: transparent;
+  color: var(--color-purple);
+
+  &:hover {
+    background-color: var(--color-purple-d);
+    color: var(--color-white);
+  }
+}

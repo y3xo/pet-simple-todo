@@ -1,0 +1,17 @@
+:root {
+  --color-black: #252525;
+  --color-white: #F7F7F7;
+  --color-purple: #6C63FF;
+  --color-purple-20: rgba(108, 99, 255, 0.2);
+  --color-purple-l: #C3C1E5;
+  --color-purple-d: #534CC2;
+
+  --input-height: 38px;
+
+  --border: 1px solid var(--color-purple);
+
+  --border-radius-l: 5px;
+  --border-radius-s: 2px;
+
+  --transition-duration: .2s
+}

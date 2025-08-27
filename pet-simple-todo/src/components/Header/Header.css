@@ -1,0 +1,12 @@
+.header {
+  display: grid;
+  gap: 18px 16px;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    'title title'
+    'searchBar toolBar';
+}
+
+.header__title {
+  grid-area: title;
+}

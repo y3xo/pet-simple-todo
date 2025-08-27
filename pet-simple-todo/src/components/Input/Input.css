@@ -1,0 +1,41 @@
+.input__form {
+  position: relative;
+}
+
+.input {
+  display: flex;
+  position: relative;
+  width: 100%;
+  color: var(--color-purple);
+  grid-area: searchBar;
+}
+
+.input__label {
+  position: absolute;
+  color: var(--color-purple-l);
+  left: 15px;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 1;
+  transition-duration: var(--transition-duration);
+  user-select: none;
+  cursor: text;
+}
+
+.input__label.motion {
+  font-size: 14px;
+  left: 10px;
+  top: -30%;
+  color: var(--color-purple);
+}
+
+.input__icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  color: var(--color-purple);
+  right: 15px;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 1;
+}
