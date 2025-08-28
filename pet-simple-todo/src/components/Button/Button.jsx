@@ -1,4 +1,5 @@
 import React from 'react';
+import {memo} from "react";
 import './Button.css'
 import {moduleClassName} from "../../utils.js";
 
@@ -9,10 +10,10 @@ const Button = ({module, icon, title, ...rest}) => {
       {
         module === 'icon'
           ? icon
-          : title
+          : title.toUpperCase()
       }
     </button>
   );
 };
 
-export default Button;
+export default memo(Button);

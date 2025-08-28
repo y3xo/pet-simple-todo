@@ -13,7 +13,7 @@ export default function Input({icon, onChange, label, ...rest}) {
 
   return (
     <form className='input__form' onSubmit={handleSubmit}>
-      <label htmlFor={rest.id} className={`input__label ${(isFocus || rest.value) && 'motion'}`}>{isFocus ? inFocusLabel : label}</label>
+      <label htmlFor={rest.id} className={`input__label ${(isFocus || rest.value) ? 'motion' : ''}`}>{isFocus ? inFocusLabel : label}</label>
         <input
           className='input'
           onFocus={() => setIsFocus(true)}
@@ -22,7 +22,7 @@ export default function Input({icon, onChange, label, ...rest}) {
           autoComplete='off'
           {...rest}
         />
-        { (rest.value.length > 0) ||
+        { (rest.value?.length > 0) ||
           <span className="input__icon">{icon}</span>
         }
     </form>

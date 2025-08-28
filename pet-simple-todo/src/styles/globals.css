@@ -5,9 +5,13 @@
 }
 
 body {
+  position: relative;
+  display: grid;
   margin: 0 auto;
   height: 100vh;
   padding: 40px;
+  width: 100%;
+  max-width: 750px;
 }
 
 h1 {

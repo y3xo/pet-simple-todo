@@ -1,0 +1,15 @@
+.task-list {
+  display: grid;
+  row-gap: 6px;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.task-list__item {
+  &:not(:last-child) {
+    border-bottom: var(--border);
+    border-color: var(--color-purple-l);
+    padding-bottom: 6px;
+  }
+}

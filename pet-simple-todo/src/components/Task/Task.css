@@ -1,0 +1,55 @@
+.task {
+  display: flex;
+  align-items: center;
+  padding-inline: 10px;
+  height: 36px;
+
+  :hover {
+    color: var(--color-purple-d);
+  }
+}
+
+.task__body {
+  display: flex;
+  align-items: center;
+  column-gap: 17px;
+  height: 100%;
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.task__input {
+  height: 26px;
+  aspect-ratio: 1;
+}
+
+.task__label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition-duration: var(--transition-duration);
+}
+
+.task__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-purple);
+  background-color: transparent;
+  height: 100%;
+  aspect-ratio: 1;
+  border: none;
+
+  &:hover {
+    color: var(--color-purple-d);
+  }
+
+  svg {
+    color: inherit;
+    height: 40%;
+    width: 100%;
+    transition-duration: var(--transition-duration);
+  }
+
+}
