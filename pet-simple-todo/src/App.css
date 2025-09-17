@@ -1,0 +1,47 @@
+.footer {
+  display: grid;
+  position: relative;
+  flex-grow: 1;
+}
+
+.app {
+  --color-text: var(--color-black);
+  --color-button-text: var(--color-white);
+  --color-input: var(--color-purple);
+  --color-accent: var(--color-purple);
+  --border: var(--border-static);
+  --bg-color: var(--color-white);
+
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  height: 100vh;
+  background-color: var(--bg-color);
+  transition-duration: var(--transition-duration);
+
+  &.dark {
+    --color-text: var(--color-white);
+    --color-input: var(--color-white);
+    --color-accent: var(--color-purple-l);
+    --border: 1px solid var(--color-white);
+    --bg-color: var(--color-black);
+  }
+}
+
+.alert-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.alert-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.alert-exit {
+  opacity: 1;
+}
+.alert-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}

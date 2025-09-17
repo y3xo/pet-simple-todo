@@ -1,9 +1,29 @@
 import React from 'react';
 import './Task.css'
+import {
+  useAppState,
+  useAppStateDispatch
+} from "../../context/StateProvider.jsx";
 
 const Task = ({task}) => {
+  const dispatch = useAppStateDispatch()
+  const {tasks} = useAppState()
   const {id, title, isChecked} = task
   const taskId = `task-${id}`
+
+  function handleTaskClick(taskId) {
+    dispatch({
+      type: 'toggle-task-check',
+      taskId
+    })
+  }
+
+  function handleTaskIconClick(taskId) {
+    dispatch({
+      type: 'delete-task',
+      taskId
+    })
+  }
   return (
     <div className='task'>
       <div className="task__body">
@@ -11,11 +31,12 @@ const Task = ({task}) => {
           className='task__input'
           id={taskId}
           type='checkbox'
-          // checked={isChecked}
+          checked={isChecked}
+          onChange={() => handleTaskClick(id)}
         />
         <label className='task__label' htmlFor={taskId}>{title}</label>
       </div>
-      <button className='task__icon'>
+      <button className='task__icon' onClick={() => handleTaskIconClick(id)}>
         <svg
           fill="#000000"
           height="800px"
@@ -36,7 +57,6 @@ const Task = ({task}) => {
 	c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"
           />
         </svg>
-
       </button>
     </div>
   );

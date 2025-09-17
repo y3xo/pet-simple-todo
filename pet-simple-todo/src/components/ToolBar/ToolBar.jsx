@@ -3,8 +3,15 @@ import {memo} from "react";
 import './ToolBar.css'
 import Button from "../Button/Button.jsx";
 import Select from "../Select/Select.jsx";
+import {
+  useAppState,
+  useAppStateDispatch
+} from "../../context/StateProvider.jsx";
 
 const ToolBar = memo(() => {
+  const dispatch = useAppStateDispatch()
+  const {darkTheme} = useAppState()
+
   const themeIcon = <svg
     width={22}
     height={22}
@@ -23,7 +30,10 @@ const ToolBar = memo(() => {
   return (
     <div className='tool-bar'>
       <Select/>
-      <Button module='icon' icon={themeIcon}/>
+      <Button module='icon' icon={themeIcon} onClick={() => dispatch({
+        type: 'switch-theme',
+        isDark: !darkTheme
+      })}/>
     </div>
   );
 });

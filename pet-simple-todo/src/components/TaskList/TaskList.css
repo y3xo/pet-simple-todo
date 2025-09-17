@@ -3,7 +3,27 @@
   row-gap: 6px;
   width: 100%;
   max-width: 520px;
+  max-height: 600px;
   margin: 0 auto;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+
+.task-list::-webkit-scrollbar {
+  width: .8em
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background-color: var(--color-purple-l);
+  border: 3px solid transparent;
+  border-radius: var(--border-radius-l);
+  background-clip: content-box;
+  cursor: grab;
+}
+
+.task-list::-webkit-scrollbar-thumb:active {
+  cursor: grabbing;
 }
 
 .task-list__item {

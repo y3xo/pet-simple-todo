@@ -1,6 +1,4 @@
-/**
-  Нормализация блочной модели
- */
+@import "variables.css";
 *,
 ::before,
 ::after {
@@ -115,6 +113,12 @@ html {
     при появлении / исчезновении скроллбара
    */
   /*scrollbar-gutter: stable;*/
+  background-color: var(--bg-color);
+}
+
+html::-webkit-scrollbar {
+  /*width: .5em;*/
+  /*background-color: red;*/
 }
 
 /**

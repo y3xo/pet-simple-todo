@@ -9,5 +9,6 @@
 }
 
 .header__title {
+  color: var(--color-text);
   grid-area: title;
 }

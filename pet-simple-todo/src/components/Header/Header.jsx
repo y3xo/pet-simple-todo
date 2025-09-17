@@ -1,10 +1,21 @@
 import './Header.css'
 import Input from "../Input/Input.jsx";
-import {useState} from "react";
 import ToolBar from "../ToolBar/ToolBar.jsx";
+import {
+  useAppState,
+  useAppStateDispatch
+} from "../../context/StateProvider.jsx";
 
 export default function Header() {
-  const [searchTerm, setSearchTerm] = useState('')
+  const {searchTerm} = useAppState()
+  const dispatch = useAppStateDispatch()
+
+  function handleChange(value) {
+    dispatch({
+      type: 'change-search-term',
+      searchTerm: value
+    })
+  }
 
   const searchIcon = <svg
     viewBox="0 0 24 24"
@@ -29,7 +40,7 @@ export default function Header() {
         type='search'
         label="Search task..."
         value={searchTerm}
-        onChange={setSearchTerm}
+        onChange={handleChange}
         icon={searchIcon}
       />
       <ToolBar/>

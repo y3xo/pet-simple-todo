@@ -1,7 +1,8 @@
 .select {
   position: relative;
   min-width: 95px;
-  background-color: var(--color-white);
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius-l);
   z-index: 1;
 }
 
@@ -27,6 +28,7 @@
   visibility: hidden;
   max-height: 200px;
   width: 100%;
+  color: var(--color-text);
   opacity: 0;
   background: inherit;
   border: var(--border);

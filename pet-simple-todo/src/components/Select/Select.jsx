@@ -1,13 +1,21 @@
 import React, {useState} from 'react';
 import './Select.css'
+import {useAppStateDispatch} from "../../context/StateProvider.jsx";
 
 const Select = () => {
   const [open, setOpen] = useState(false)
   const [selectedOption, setSelectedOption] = useState('ALL')
 
-  function onOptionClick(option) {
+  const dispatch = useAppStateDispatch()
+
+  function onOptionClick(option, isComplete) {
     setSelectedOption(option)
     setOpen(false)
+
+    dispatch({
+      type: 'toggle-filter',
+      filter: isComplete
+    })
   }
   return (
 
@@ -21,9 +29,9 @@ const Select = () => {
         <span className='select-trigger__icon'>▾</span>
       </button>
       <div className={`options ${open ? "open" : ""}`}>
-        <div className="option" onClick={() => onOptionClick('All')}>All</div>
-        <div className="option" onClick={() => onOptionClick('Complete')}>Complete</div>
-        <div className="option" onClick={() => onOptionClick('Incomplete')}>Incomplete</div>
+        <div className="option" onClick={() => onOptionClick('All', null)}>All</div>
+        <div className="option" onClick={() => onOptionClick('Complete', true)}>Complete</div>
+        <div className="option" onClick={() => onOptionClick('Incomplete', false)}>Incomplete</div>
       </div>
     </div>
   );

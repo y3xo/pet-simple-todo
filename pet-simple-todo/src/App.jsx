@@ -2,10 +2,21 @@ import './App.css'
 import Header from "./components/Header/Header.jsx";
 import TaskList from "./components/TaskList/TaskList.jsx";
 import Button from "./components/Button/Button.jsx";
+import {useAppState, useAppStateDispatch} from "./context/StateProvider.jsx";
 import CreateTaskModule
   from "./components/CreateTaskModule/CreateTaskModule.jsx";
+import {setLocalStorage} from "./utils.js";
+import {useEffect} from "react";
+import { AnimatePresence } from "motion/react"
 
 function App() {
+  const state = useAppState()
+  const dispatch = useAppStateDispatch()
+
+  useEffect(() => {
+    setLocalStorage(state)
+  }, [state]);
+
   const plusIcon = <svg
     width={24}
     height={24}
@@ -23,18 +34,30 @@ function App() {
 
 
   return (
-    <>
+    <div className={`app${state.darkTheme ? ' dark' : ''}`}>
       <Header/>
-      <TaskList/>
-      <Button module='icon' icon={plusIcon} style={{
-          position: 'absolute',
-          height: '50px',
-          borderRadius: "50%",
-          bottom: '50px',
-          right: '0'
-      }}/>
-      <CreateTaskModule/>
-    </>
+      {
+        <TaskList/>
+      }
+        <footer className='footer container'>
+          <Button module='icon' icon={plusIcon} onClick={() => {
+            dispatch({
+              type: 'open-create-task-module',
+              isOpened: true
+            })
+          }} style={{
+            position: 'absolute',
+            height: '50px',
+            borderRadius: "50%",
+            bottom: '50px',
+            right: '0'
+          }}/>
+        </footer>
+
+      <AnimatePresence>
+        {state.isCreateTaskModuleOpen ? <CreateTaskModule /> : null}
+      </AnimatePresence>
+    </div>
   )
 }
 

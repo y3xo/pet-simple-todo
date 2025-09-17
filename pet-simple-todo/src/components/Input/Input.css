@@ -6,7 +6,9 @@
   display: flex;
   position: relative;
   width: 100%;
-  color: var(--color-purple);
+  color: var(--color-input);
+  background-color: transparent;
+  border: var(--border);
   grid-area: searchBar;
 }
 
@@ -26,14 +28,14 @@
   font-size: 14px;
   left: 10px;
   top: -30%;
-  color: var(--color-purple);
+  color: var(--color-accent);
 }
 
 .input__icon {
   position: absolute;
   width: 20px;
   height: 20px;
-  color: var(--color-purple);
+  color: var(--color-accent);
   right: 15px;
   top: 50%;
   translate: 0 -50%;

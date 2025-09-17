@@ -2,7 +2,7 @@ import {memo} from "react";
 import './Input.css'
 import {useState} from "react";
 
-export default function Input({icon, onChange, label, ...rest}) {
+function Input({icon, onChange, label, ...rest}) {
   const [isFocus, setIsFocus] = useState(false)
 
   function handleSubmit(e) {
@@ -28,3 +28,5 @@ export default function Input({icon, onChange, label, ...rest}) {
     </form>
   )
 }
+
+export default Input
